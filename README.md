@@ -20,5 +20,5 @@ trello -> [our board]
 
 
 
-[our chart]: (https://docs.google.com/spreadsheets/d/1Izdj2OOSHveuAihjH8i2fcOYxC9ScWReugimje5Xi2o/edit?usp=sharing)
-[our board]: (https://trello.com/b/EXkzrvSe)
+[our chart]: https://docs.google.com/spreadsheets/d/1Izdj2OOSHveuAihjH8i2fcOYxC9ScWReugimje5Xi2o/edit?usp=sharing
+[our board]: https://trello.com/b/EXkzrvSe
