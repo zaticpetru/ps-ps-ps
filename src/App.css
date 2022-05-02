@@ -1,25 +1,26 @@
+.App {
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 80%;
+    margin: auto;
+    min-height: 80vh;
+}
+
 .header {
     overflow: hidden;
     background-color: #f1f1f1;
     padding: 20px 10px;
 }
 
-.header a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;
-}
-
+.header a,
 .header button {
-    float: left;
     color: black;
     text-align: center;
-    padding: 12px;
+    padding: 6px;
+    margin: 0 6px;
+    text-decoration: none;
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
@@ -35,6 +36,21 @@
     color: black;
 }
 
+.header button:hover {
+    cursor: pointer;
+    color: black;
+}
+
+button:hover.sign-in {
+    background-color: rgb(105, 153, 135);
+}
+
+button:hover.sign-out {
+    background-color: rgb(153, 105, 105);
+    color: white;
+}
+
+
 .header a.active {
     background-color: dodgerblue;
     color: white;
@@ -45,13 +61,139 @@
 }
 
 @media screen and (max-width: 500px) {
-    .header a {
-        float: none;
-        display: block;
+
+    .header a,
+    .header button {
         text-align: left;
+        display: block;
     }
 
-    .header-right {
+    .header .float-right {
         float: none;
     }
+}
+
+/* footer styles */
+footer {
+    background-color: #f1f1f1;
+    padding-top: 3rem;
+    height: 8rem;
+    text-align: center;
+}
+
+footer a {
+    color: black;
+    text-align: center;
+    padding: 6px;
+    margin: 0 6px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.flex.space-around {
+    justify-content: space-around;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+/* chatRoom styles */
+.chat {
+    max-width: 728px;
+    padding: 10px;
+    height: 60vh;
+    margin: 3vh 0 3vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    background: #30150c;
+}
+
+.chatBox {
+    height: 5vh;
+    bottom: 0;
+    background-color: rgb(87, 77, 77);
+    width: 100%;
+    max-width: 728px;
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.chatBox button {
+    width: 20%;
+    background-color: rgb(56, 56, 143);
+}
+
+
+.chatBox input {
+    line-height: 1.5;
+    width: 100%;
+    font-size: 1rem;
+    background: #C9B1AF;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+}
+
+.message p {
+    max-width: 500px;
+    margin-bottom: 12px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.message.sent {
+    flex-direction: row-reverse;
+}
+
+.message.sent p {
+    background: #FD9790;
+    align-self: flex-end;
+}
+
+.message.received p {
+    background: #fcdedc;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 2px 5px;
 }
