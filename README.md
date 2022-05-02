@@ -5,9 +5,8 @@ Procrastination summoner
 Project special*  
 **(web gaming platform)**
 
+## Echipa
 
-
-Echipa:
 - Roberta-Ioana Iordan
 - Andrei Tolbariu
 - Raul Ionuț Tirizica
@@ -16,9 +15,12 @@ Echipa:
 gant -> [our chart]  
 trello -> [our board]
 
-
-
-
-
 [our chart]: https://docs.google.com/spreadsheets/d/1Izdj2OOSHveuAihjH8i2fcOYxC9ScWReugimje5Xi2o/edit?usp=sharing
 [our board]: https://trello.com/b/EXkzrvSe
+
+---
+
+## How to run project locally
+
+`npm run functions` - for emulating backend locally  
+`npm start` - for starting frontend app  
