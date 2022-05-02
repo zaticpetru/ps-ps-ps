@@ -1,11 +1,11 @@
 import './App.css'
 
 import { auth } from './firebase'
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { useAuthState} from 'react-firebase-hooks/auth';
+import { Link, Outlet } from 'react-router-dom';
 
-import GameRoom from './components/GameRoom'
-
+import SignIn from './components/SignIn';
+import SignOut from './components/SignOut';
 
 function App() {
 
@@ -14,34 +14,29 @@ function App() {
   return (
     <div className='App'>
       <header className='header'>
-        <a href="#" class="logo">Ps ps ps</a>
-        <div class="float-right">
-          <a class="active" href="#">Home</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
+        <Link to="/" className="logo">Ps ps ps</Link>
+        <nav className="float-right">
+          <Link to="/">Home</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/about">About</Link>
           { user ? <SignOut/> : <SignIn/>}
-        </div>
+        </nav>
       </header>
-      <GameRoom/>
+
+      <div className='content'>
+        <Outlet/>
+      </div>
+
+      <footer className='flex column space-around'>
+          <nav className="flex space-around">
+            <Link to="/">Home</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/about">About</Link>
+          </nav>
+          <small>&copy;2022 <strong>Ps productions</strong>, All Rights Reserved</small>
+      </footer>
     </div>
   );
-}
-
-function SignIn() {
-  const signInWithGoogle = () => {
-    var provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider);
-  }
-
-  return (
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-  )
-}
-
-function SignOut() {
-  return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
-  )
 }
 
 export default App;
