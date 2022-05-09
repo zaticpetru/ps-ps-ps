@@ -1,0 +1,12 @@
+.telephone {
+    color: #c7382e;
+    text-decoration: underline;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #f1f1f1;
+    /* height: 300px; */
+}
