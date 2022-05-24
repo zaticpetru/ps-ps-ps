@@ -43,25 +43,15 @@ function ChatRoom() {
   }
 
   return (
-    <div className="flex">
-
-      <div style={{
-        flexGrow: '3',
-        backgroundColor: 'blue',
-        minWidth: '550px',
-        minHeight: '650px',
-        marginRight: '40px',
-        opacity: '0.5'
-      }}>
-
-      </div>
+    <div className="max-w-sm border-2 border-gray-700 p-2 rounded-md">
       <div>
-        {user ?
-          <p>Congrats, you're signed in and can write messages</p> :
-          <p>* Sign in to write messages</p>
-        }
-        <hr/>
-        <main className="chat">
+        <p>
+          {user ? 'Congrats, you\'re signed in and can write messages' :
+          '* Sign in to write messages'
+          }
+        </p>
+        <hr className="my-1 border-1 border-primary rounded-full m-2"/>
+        <main className="max-h-80 overflow-auto flex flex-col pr-2">
           {error && <strong>Error: {JSON.stringify(error)}</strong>}
           {loading && <span>Collection: Loading...</span>}
           {messages &&
@@ -78,9 +68,18 @@ function ChatRoom() {
         </main>
         {
           user &&
-          <form className="chatBox" onSubmit={sendMessage}>
-            <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
-            <button type="submit" disabled={!formValue}>🕊️</button>
+          <form className="flex items-center" onSubmit={sendMessage}>
+            <input className="grow m-1 p-2 border border-slate-300 rounded-md text-sm shadow-sm"
+              value={formValue}
+              onChange={(e) => setFormValue(e.target.value)}
+              placeholder="say something nice" />
+            <button className="bg-primary h-8 w-8 rounded-xl cursor-pointer
+                disabled:bg-gray-500
+                disabled:opacity-30"
+              type="submit"
+              disabled={!formValue}>
+              🕊️
+            </button>
           </form>
         }
       </div>

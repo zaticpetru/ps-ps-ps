@@ -1,11 +1,8 @@
-import './Contact.css'
-
-
 export default function Contact() {
   return (
-    <main style={{ padding: "1rem 0" }}>
+    <main>
       <h2>Contact</h2>
-      <p className="telephone">Telephone: +40 254 252 454</p>
+      <p>Telephone: +40 254 252 454</p>
       <article>
         <h1>London</h1>
         <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
