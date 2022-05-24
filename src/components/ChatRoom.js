@@ -48,7 +48,6 @@ function ChatRoom() {
       <div style={{
         flexGrow: '3',
         backgroundColor: 'blue',
-        backgroundImage: 'url(https://cdn-icons.flaticon.com/png/512/5522/premium/5522754.png?token=exp=1651514205~hmac=9548c9e44ceeb4d8d5ce277ad4eacb74)',
         minWidth: '550px',
         minHeight: '650px',
         marginRight: '40px',
@@ -68,6 +67,7 @@ function ChatRoom() {
           {messages &&
             messages.docs.map((messageDoc) =>
               <Message
+                key={messageDoc.id}
                 messageData={messageDoc.data()}
                 messageDocId={messageDoc.id}
                 currentUid={user ? user.uid : ''}

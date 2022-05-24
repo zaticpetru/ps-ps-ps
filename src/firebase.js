@@ -12,10 +12,6 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_appId
 }
 
-console.log("process.env.REACT_APP_apiKey")
-console.log(process.env)
-
-
 const app = initializeApp(firebaseConfig)
 const firestore = getFirestore(app)
 const functions = getFunctions(app)
