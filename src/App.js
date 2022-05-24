@@ -10,7 +10,7 @@ function App() {
     <div>
       <SideBar />
       <div className='ml-16 flex flex-col justify-between min-h-screen'>
-        <div className='ml-4'>
+        <div className='ml-4 mt-4'>
           <Outlet />
         </div>
         <footer className='bg-primary text-white p-4 flex flex-col items-center'>
